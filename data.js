@@ -128,4 +128,6 @@ const data = [
   },
 ];
 
+module.exports = data;
+
 // https://img.youtube.com/vi/TrdpK8dMsHY/0.jpg
