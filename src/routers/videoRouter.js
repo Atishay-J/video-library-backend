@@ -1,9 +1,9 @@
 const express = require("express");
-const router = new express.Router();
+const videoRouter = new express.Router();
 
 const Videos = require("../../src/models/videoSchema");
 
-router.post("/Videos", async (req, res) => {
+videoRouter.post("/Videos", async (req, res) => {
   try {
     const addVideos = new Videos(req.body);
     const insertedVideo = await addVideos
@@ -15,7 +15,7 @@ router.post("/Videos", async (req, res) => {
   }
 });
 
-router.get("/api/videos", async (req, res) => {
+videoRouter.get("/api/videos", async (req, res) => {
   try {
     const videos = await Videos.find({}).then(console.log("Found all videos"));
     res.send(videos);
@@ -24,4 +24,15 @@ router.get("/api/videos", async (req, res) => {
   }
 });
 
-module.exports = router;
+videoRouter.get("/api/channels/:id", async (req, res) => {
+  try {
+    const channel = await Videos.findById(req.params.id).then(
+      console.log("Found Channel")
+    );
+    res.send(channel);
+  } catch (err) {
+    res.send(err);
+  }
+});
+
+module.exports = videoRouter;

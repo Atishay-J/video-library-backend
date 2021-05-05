@@ -2,7 +2,8 @@ const express = require("express");
 const cors = require("cors");
 
 const app = express();
-const router = require("../src/routers/videoRouter");
+const videoRouter = require("../src/routers/videoRouter");
+const userRouter = require("../src/routers/usersRouter");
 const initializaDatabase = require("../src/utils/databaseInit");
 
 require("dotenv/config");
@@ -10,7 +11,8 @@ require("./db/conn");
 
 app.use(express.json());
 app.use(cors());
-app.use(router);
+app.use(videoRouter);
+app.use(userRouter);
 
 const Videos = require("../src/models/videoSchema");
 
