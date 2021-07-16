@@ -4,6 +4,7 @@ const cors = require("cors");
 const app = express();
 const videoRouter = require("../src/routers/videoRouter");
 const userRouter = require("../src/routers/usersRouter");
+const auhtRouter = require("./routers/authRouter");
 const initializaDatabase = require("../src/utils/databaseInit");
 
 require("dotenv/config");
@@ -11,6 +12,7 @@ require("./db/conn");
 
 app.use(express.json());
 app.use(cors());
+app.use(auhtRouter);
 app.use(videoRouter);
 app.use(userRouter);
 
