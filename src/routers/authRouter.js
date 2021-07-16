@@ -2,6 +2,7 @@ const express = require("express");
 const router = new express.Router();
 const Users = require("../../src/models/usersSchema");
 const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 
 router.post("/signup", async (req, res) => {
   try {
@@ -25,9 +26,26 @@ router.post("/signin", async (req, res) => {
 
     if (foundUser) {
       const authenticated = bcrypt.compare(password, foundUser.password);
-
+      {
+        foundUser.username,
+          foundUser.history,
+          foundUser.playlist,
+          foundUser.subscirbed,
+          foundUser.likedVideos;
+      }
       if (authenticated) {
-        res.send(foundUser);
+        var token = jwt.sign(
+          { username: foundUser.username },
+          process.env.SECRET_KEY
+        );
+        res.json({
+          username: foundUser.username,
+          history: foundUser.history,
+          playlist: foundUser.playlist,
+          subscribed: foundUser.subscribed,
+          likedVideos: foundUser.likedVideos,
+          token,
+        });
       }
     }
 
