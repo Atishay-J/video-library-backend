@@ -26,13 +26,7 @@ router.post("/signin", async (req, res) => {
 
     if (foundUser) {
       const authenticated = bcrypt.compare(password, foundUser.password);
-      {
-        foundUser.username,
-          foundUser.history,
-          foundUser.playlist,
-          foundUser.subscirbed,
-          foundUser.likedVideos;
-      }
+
       if (authenticated) {
         var token = jwt.sign(
           { username: foundUser.username },
@@ -44,6 +38,7 @@ router.post("/signin", async (req, res) => {
           playlist: foundUser.playlist,
           subscribed: foundUser.subscribed,
           likedVideos: foundUser.likedVideos,
+          userId: foundUser._id,
           token,
         });
       }

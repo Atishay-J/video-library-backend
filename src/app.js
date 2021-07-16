@@ -16,7 +16,7 @@ app.use(auhtRouter);
 app.use(videoRouter);
 app.use(userRouter);
 
-const Videos = require("../src/models/videoSchema");
+// const Videos = require("../src/models/videoSchema");
 
 // ** Use this only one to set Initial Values for database **
 // initializaDatabase();

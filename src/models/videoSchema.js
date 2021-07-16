@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 
 const videoSchema = new mongoose.Schema({
+  isUserSubscribed: false,
   creatorName: String,
   creatorAvatar: String,
   creatorVideos: [
@@ -10,10 +11,12 @@ const videoSchema = new mongoose.Schema({
       videoTitle: String,
       videoDuration: String,
       videoTag: String,
+      creatorName: String,
+      creatorAvatar: String,
     },
   ],
 });
 
-const Videos = new mongoose.model("Videos", videoSchema);
+const Video = new mongoose.model("Video", videoSchema);
 
-module.exports = Videos;
+module.exports = Video;
