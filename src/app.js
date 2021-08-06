@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require("cors");
 
 const app = express();
-app.use(cors({ credentials: true, origin: true }));
+app.use(cors({ credentials: true, origin: "*" }));
 
 const videoRouter = require("../src/routers/videoRouter");
 const userRouter = require("../src/routers/usersRouter");

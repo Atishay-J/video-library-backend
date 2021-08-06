@@ -1,4 +1,3 @@
-const { response } = require("express");
 const express = require("express");
 const videoRouter = new express.Router();
 
@@ -30,7 +29,6 @@ videoRouter.get("/api/videos", async (req, res) => {
 
 videoRouter.get("/api/channels/:id", async (req, res) => {
   try {
-    console.log("IIDDD \n ", req.params.id);
     const channel = await Video.findById(req.params.id)
       .then((response) => {
         console.log("Found Channel", response);
