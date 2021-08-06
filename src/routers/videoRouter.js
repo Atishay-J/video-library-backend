@@ -2,7 +2,7 @@ const express = require("express");
 const videoRouter = new express.Router();
 
 const Channel = require("../models/ChannelSchema");
-const Video = require("../models/VideoSchema");
+const Video = require("../models/videoSchema");
 
 videoRouter.post("/videos", async (req, res) => {
   try {
