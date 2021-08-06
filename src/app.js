@@ -23,7 +23,7 @@ app.use(userRouter);
 // ** Use this only one to set Initial Values for database **
 // initializaDatabase();
 
-app.get("/", cors(), (req, res) => {
+app.get("/", (req, res) => {
   res.send("server running");
 });
 
