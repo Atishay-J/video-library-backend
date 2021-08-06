@@ -1,8 +1,9 @@
 const express = require("express");
-const cors = require("cors");
+var cors = require("cors");
 
 const app = express();
-app.use(cors({ credentials: true, origin: "*" }));
+// app.use(cors({ credentials: true, origin: "*" }));
+app.use(cors());
 
 const videoRouter = require("../src/routers/videoRouter");
 const userRouter = require("../src/routers/usersRouter");
@@ -22,7 +23,7 @@ app.use(userRouter);
 // ** Use this only one to set Initial Values for database **
 // initializaDatabase();
 
-app.get("/", (req, res) => {
+app.get("/", cors(), (req, res) => {
   res.send("server running");
 });
 
