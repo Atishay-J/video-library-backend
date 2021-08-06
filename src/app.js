@@ -3,6 +3,7 @@ const cors = require("cors");
 
 const app = express();
 app.use(cors());
+app.options("*", cors());
 
 const videoRouter = require("../src/routers/videoRouter");
 const userRouter = require("../src/routers/usersRouter");
