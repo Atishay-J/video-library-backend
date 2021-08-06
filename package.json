@@ -1,8 +1,18 @@
 {
-  "name": "Backend",
+  "name": "backend",
   "version": "1.0.0",
-  "description": "�� \u0000#\u0000 \u0000v\u0000i\u0000d\u0000e\u0000o\u0000-\u0000l\u0000i\u0000b\u0000r\u0000a\u0000r\u0000y\u0000-\u0000b\u0000a\u0000c\u0000k\u0000e\u0000n\u0000d\u0000\r\u0000 \u0000",
+  "description": "",
   "main": "data.js",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.12.7",
+    "nodemon": "^2.0.7"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node src/app.js",
@@ -18,14 +28,5 @@
   "bugs": {
     "url": "https://github.com/Atishay-J/video-library-backend/issues"
   },
-  "homepage": "https://github.com/Atishay-J/video-library-backend#readme",
-  "dependencies": {
-    "bcrypt": "^5.0.1",
-    "cors": "^2.8.5",
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.12.7",
-    "nodemon": "^2.0.7"
-  }
+  "homepage": "https://github.com/Atishay-J/video-library-backend#readme"
 }

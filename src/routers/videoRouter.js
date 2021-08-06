@@ -4,7 +4,7 @@ const videoRouter = new express.Router();
 const Channel = require("../models/ChannelSchema");
 const Video = require("../models/VideoSchema");
 
-videoRouter.post("/Videos", async (req, res) => {
+videoRouter.post("/videos", async (req, res) => {
   try {
     const addVideos = new Channel(req.body);
     const insertedVideo = await addVideos
