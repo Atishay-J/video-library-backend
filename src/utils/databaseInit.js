@@ -1,5 +1,5 @@
 const Channels = require("../../src/models/ChannelSchema");
-const Video = require("../models/VideoSchema");
+const Video = require("../models/videoSchema");
 const data = require("../../data");
 
 // USE THIS TO SET INITIAL VALUES OF DATABASE
