@@ -2,19 +2,18 @@ const express = require("express");
 const cors = require("cors");
 
 const app = express();
-app.use(cors());
-app.options("*", cors());
+app.use(cors({ credentials: true, origin: true }));
 
 const videoRouter = require("../src/routers/videoRouter");
 const userRouter = require("../src/routers/usersRouter");
-const auhtRouter = require("./routers/authRouter");
+const authRouter = require("./routers/authRouter");
 const initializaDatabase = require("../src/utils/databaseInit");
 
 require("dotenv/config");
 require("./db/conn");
 
 app.use(express.json());
-app.use(auhtRouter);
+app.use(authRouter);
 app.use(videoRouter);
 app.use(userRouter);
 
